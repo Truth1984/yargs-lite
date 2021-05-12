@@ -24,7 +24,7 @@ well, maybe I'm stupid and implement `yargs` in a wrong way, but if you want to 
 
 ```js
 #!/usr/bin/env node
-const yargslite = require("../index");
+const yargslite = require("yargs-lite");
 let yargs = new yargslite();
 
 yargs.addHelpDocEntry("--help", "general help page\ndisplay:\tdisplay storage");
