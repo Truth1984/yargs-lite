@@ -2,7 +2,7 @@
 
     "yargs is too heavy, and too slow"
 
-<h3> well, maybe I'm stupid and implement `yargs` in a wrong way, but if you want to build a lite command line tool, try this one out (only ~10x faster for my own use case?) </h3>
+well, maybe I'm stupid and implement `yargs` in a wrong way, but if you want to build a lite command line tool, try this one out (only ~10x faster for my own use case?)
 
 ## setup
 
@@ -132,7 +132,7 @@ let's define some parameters as
 
 and ignore the entry (full command should be something like `./bin/index.js -c a --e b`), and the default result contains `{args:{}, kwargs:{}, _:[]}`
 
-straightforward case example
+straight-forward case example
 
 ```bash
 # 1 to 1 pair
