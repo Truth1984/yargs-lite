@@ -62,6 +62,17 @@ module.exports = class {
           let keyFinder = (key) => u.reSub(key, /^-+/, "");
           let previous = { status: "open", target: [storage._] };
 
+          let equalProcess = () => {
+            let product = [];
+            let unfold = (i) => [
+              u.refind(i, u.regexBetweenOutNonGreedy(/^/, "=")),
+              u.refind(i, u.regexBetweenOutNonGreedy("=", "$")),
+            ];
+            for (let i of u.arrayExtract(argv, 1))
+              product = u.arrayAdd(product, ...(u.refind(i, /^-+\w+=/) ? unfold(i) : [i]));
+            return product;
+          };
+
           // previous: {status: open}
           // 0 : previous.target all add
           // 1+ : set previous target [] -> {status: close}
@@ -70,7 +81,7 @@ module.exports = class {
           // 0 : previous.target all add -> {status: open}
           // 1+ : push to previous.target []
 
-          for (let i of u.arrayExtract(argv, 1)) {
+          for (let i of equalProcess()) {
             let amount = keyLenFinder(i);
             if (amount < 0) throw `yargs-lite can't convert ${i} to string`;
 

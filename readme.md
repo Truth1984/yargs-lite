@@ -148,7 +148,7 @@ ambiguous case example
 # n to 1 pair
 ./s -cd a           # args:{c:[a], d:[a]}
 ./s -c -d a         # args:{c:[a], d:[a]}
-./s -c -d --f b     # args:{c:[b], d:[b]}    kwargs:{f:[b]}
+./s -c -d --f b     # args:{c:[b], d:[b]}, kwargs:{f:[b]}
 
 # other example
 ./s a -cd b g       # _:[a], args:{c:[b,g], d:[b,g]}
@@ -160,4 +160,10 @@ ambiguous case example
 ./s a -cd           # _:[a], args:{c:[], d:[]}
 ./s a -cd g -cd     # _:[a], args:{c:[], d:[]}
 ./s a ---ef         # _:[a], kwargs:{ef:[]}
+```
+
+version >= 1.1.0
+
+```bash
+./s -cd=a           # args:{c:[a], d:[a]}
 ```
