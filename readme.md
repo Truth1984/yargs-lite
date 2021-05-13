@@ -16,7 +16,7 @@ well, maybe I'm stupid and implement `yargs` in a wrong way, but if you want to 
 
 5. use `npm run myscript` or call `./bin/index.js` directly
 
-6. under `bin/index.js` checkout [example](##example)
+6. under `bin/index.js` checkout [example](#example)
 
 7. (opitonal) link you command, or put it under path variables so you can use your command directly. i.e. `sudo -u root ln -s bin/index.js /usr/bin/myscript`
 
