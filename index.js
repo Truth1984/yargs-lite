@@ -1,6 +1,10 @@
 const tasklanguage2 = require("tl2");
 const u = require("awadau");
 
+/**
+ * @typedef {(storage:{origin:{argv:{}},argv:{},entry?:string})=>{}} parserFunc
+ * @typedef {(storage:{origin:{argv:{}},argv:{},entry?:string, _?:[], args?:{}, kwargs?:{}})=>{}} performFunc
+ */
 module.exports = class {
   constructor() {
     this.storage = {};
@@ -17,7 +21,7 @@ module.exports = class {
   }
 
   /**
-   * @param {(storage:{origin:{argv:{}},argv:{},entry?:string})=>{}} parserFunc
+   * @param {parserFunc} parserFunc
    */
   addParser(parserFunc = async () => {}) {
     this.parser = parserFunc;
@@ -25,7 +29,7 @@ module.exports = class {
 
   /**
    * @param {string} entryName
-   * @param {(storage:{origin:{argv:{}},argv:{},entry?:string, _?:{}, args?:{}, kwargs?:{}})=>{}} performFunc
+   * @param {performFunc} performFunc
    */
   addCommand(entryName, performFunc = async () => {}) {
     this._execution[entryName] = performFunc;
