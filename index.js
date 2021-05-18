@@ -73,7 +73,7 @@ module.exports = class {
               u.refind(i, u.regexBetweenOutNonGreedy("=", "$")),
             ];
             for (let i of u.arrayExtract(argv, 1))
-              product = u.arrayAdd(product, ...(u.refind(i, /^-+\w+=/) ? unfold(i) : [i]));
+              product = u.arrayAdd(product, ...(u.refind(i, /^-+(\w|-)+=/) ? unfold(i) : [i]));
             return product;
           };
 
@@ -113,6 +113,7 @@ module.exports = class {
           }
         };
       }
+
       this.parser.bind(storage);
       this.parser(storage);
     });

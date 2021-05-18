@@ -1,8 +1,6 @@
 ## yargs-lite
 
-    "yargs is too heavy, and too slow"
-
-well, maybe I'm stupid and implement `yargs` in a wrong way, but if you want to build a lite command line tool, try this one out (only ~10x faster for my own use case?)
+lite-weight yargs, speed up your cli in some cases
 
 ## setup
 
